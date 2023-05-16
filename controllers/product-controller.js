@@ -2,7 +2,7 @@ const Product = require("../models/Product");
 const Category = require("../models/Category");
 
 // Get list of all products
-exports.getAllProduct = async (req, res) => {
+const getAllProduct = async (req, res) => {
     try {
         const products = await Product.find().populate("category");
         res.status(200).json(products);
@@ -12,7 +12,7 @@ exports.getAllProduct = async (req, res) => {
 }
 
 // Get single product
-exports.getSingleProduct = async (req, res) => {
+const getSingleProduct = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
         res.status(200).json(product);
@@ -22,7 +22,7 @@ exports.getSingleProduct = async (req, res) => {
 }
 
 // Create new product
-exports.createProduct = async (req, res) => {
+const createProduct = async (req, res) => {
     const category = await Category.find({ name: req.body.category });
 
     if (category.length === 0) {
@@ -44,7 +44,7 @@ exports.createProduct = async (req, res) => {
 }
 
 // Update product
-exports.updateProduct = async (req, res) => {
+const updateProduct = async (req, res) => {
     try {
         const updatedProduct = await Product.updateOne({ _id: req.params.id }, {
             $set: {
@@ -61,11 +61,15 @@ exports.updateProduct = async (req, res) => {
 }
 
 // Delete product
-exports.deleteProduct = async (req, res) => {
+const deleteProduct = async (req, res) => {
     try {
         const removedProduct = await Product.remove({ _id: req.params.id });
         res.status(200).json(removedProduct);
     } catch (err) {
         res.status(500).json({ message: err });
     }
+}
+
+module.exports = {
+    getAllProduct, getSingleProduct, createProduct, updateProduct, deleteProduct
 }
