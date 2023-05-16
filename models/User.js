@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
 
+const Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -8,8 +8,8 @@ const userSchema = new mongoose.Schema({
     createdAt: { type: Date, default: Date.now },
     role: { type: String, default: "user" },
     password: { type: String, required: true },
-    address: { type: String, required: true },
-    phone: { type: String, required: true }
+    address: { type: String, required: false },
+    phone: { type: String, required: false }
 });
 
 module.exports = mongoose.model("User", userSchema);
