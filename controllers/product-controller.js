@@ -1,0 +1,71 @@
+const Product = require("../models/Product");
+const Category = require("../models/Category");
+
+// Get list of all products
+exports.getAllProduct = async (req, res) => {
+    try {
+        const products = await Product.find().populate("category");
+        res.status(200).json(products);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}
+
+// Get single product
+exports.getSingleProduct = async (req, res) => {
+    try {
+        const product = await Product.findById(req.params.id);
+        res.status(200).json(product);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}
+
+// Create new product
+exports.createProduct = async (req, res) => {
+    const category = await Category.find({ name: req.body.category });
+
+    if (category.length === 0) {
+        return res.status(404).json({ message: "Category not found" });
+    }
+
+    const product = new Product({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category
+    });
+    try {
+        const savedProduct = await product.save();
+        res.status(201).json(savedProduct);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}
+
+// Update product
+exports.updateProduct = async (req, res) => {
+    try {
+        const updatedProduct = await Product.updateOne({ _id: req.params.id }, {
+            $set: {
+                name: req.body.name,
+                description: req.body.description,
+                price: req.body.price,
+                category: req.body.category
+            }
+        });
+        res.status(201).json(updatedProduct);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}
+
+// Delete product
+exports.deleteProduct = async (req, res) => {
+    try {
+        const removedProduct = await Product.remove({ _id: req.params.id });
+        res.status(200).json(removedProduct);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}

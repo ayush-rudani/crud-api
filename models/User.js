@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
     role: { type: String, default: "user" },
     password: { type: String, required: true },
     address: { type: String, required: false },
-    phone: { type: String, required: false }
+    phone: { type: String, required: false },
+    oders: [{ type: Schema.Types.ObjectId, ref: "Order" }],
 });
 
 module.exports = mongoose.model("User", userSchema);

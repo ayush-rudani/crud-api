@@ -3,6 +3,7 @@ require("dotenv").config();
 const connectDB = require("./config/db");
 
 const userR = require("./routes/user-routes");
+const productR = require("./routes/product-routes");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -14,6 +15,8 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/user", userR);
+app.use("/api/product", productR);
+
 
 // Connect DataBase
 connectDB();
