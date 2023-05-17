@@ -102,6 +102,34 @@ const login = async (req, res, nxt) => {
 
 }
 
+
+const updateUser = async (req, res) => {
+    try {
+        const updatedUser = await User.updateOne({ _id: req.params.id }, {
+            $set: {
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+            }
+        });
+        res.status(201).json(updatedUser);
+    } catch (err) {
+        res.status(500).json({ message: err });
+    }
+}
+
+
+const deleteUser = async (req, res) => {
+    try {
+        const removedUser = await User.findByIdAndRemove(req.params.id);
+        res.status(201).json(removedUser);
+    } catch (err) {
+        res.status(500).json({ message: err });
+
+    }
+}
+
+
 module.exports = {
-    getAllUser, signup, login, registerValiations, loginValiations
+    getAllUser, signup, login, updateUser, deleteUser, registerValiations, loginValiations
 }

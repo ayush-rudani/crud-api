@@ -66,8 +66,8 @@ const updateProduct = async (req, res) => {
 // Delete product
 const deleteProduct = async (req, res) => {
     try {
-        const removedProduct = await Product.remove({ _id: req.params.id });
-        res.status(200).json(removedProduct);
+        const removedProduct = await Product.findByIdAndRemove(req.params.id);
+        res.status(200).json({ removedProduct, message: "Product deleted" });
     } catch (err) {
         res.status(500).json({ message: err });
     }
