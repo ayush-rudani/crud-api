@@ -25,7 +25,6 @@ const registerValiations = [
 
 // router.post("/signup", userC.signup);
 const signup = async (req, res, nxt) => {
-    console.log(req.body);
     const { name, email, password } = req.body;
 
     const errors = validationResult(req);
