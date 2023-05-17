@@ -23,7 +23,7 @@ const getSingleProduct = async (req, res) => {
 
 // Create new product
 const createProduct = async (req, res) => {
-    const category = await Category.find({ name: req.body.category });
+    const category = await Category.findOne({ name: req.body.category });
 
     if (category.length === 0) {
         return res.status(404).json({ message: "Category not found" });
@@ -33,10 +33,12 @@ const createProduct = async (req, res) => {
         name: req.body.name,
         description: req.body.description,
         price: req.body.price,
-        category: req.body.category
+        category: category._id
     });
+
     try {
         const savedProduct = await product.save();
+        await category.save();
         res.status(201).json(savedProduct);
     } catch (err) {
         res.status(500).json({ message: err });
@@ -59,6 +61,7 @@ const updateProduct = async (req, res) => {
         res.status(500).json({ message: err });
     }
 }
+
 
 // Delete product
 const deleteProduct = async (req, res) => {
