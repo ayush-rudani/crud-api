@@ -122,10 +122,9 @@ const updateUser = async (req, res) => {
 const deleteUser = async (req, res) => {
     try {
         const removedUser = await User.findByIdAndRemove(req.params.id);
-        res.status(201).json(removedUser);
+        res.status(201).json({ removedUser, message: 'User deleted successfully' });
     } catch (err) {
         res.status(500).json({ message: err });
-
     }
 }
 

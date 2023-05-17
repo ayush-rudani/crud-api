@@ -12,5 +12,12 @@ router.post("/signup", registerValiations, userC.signup);
 // User Login
 router.post("/login", loginValiations, userC.login);
 
+// Update User Profile
+router.patch("/:id", userC.updateUser);
+
+// Delete User
+router.delete("/:id", userC.deleteUser);
+
+
 
 module.exports = router;
