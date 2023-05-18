@@ -73,6 +73,48 @@ const deleteProduct = async (req, res) => {
     }
 }
 
+
+const getProductsBy
+    = async (req, res) => {
+        try {
+            const getProductsByCategory = await Product.aggregate([
+                { $match: { category: req.params.c } },
+                { $group: { _id: "$name" } }
+            ]);
+
+            const getProductsByC = await Product.aggregate([
+                { $group: { _id: { "name": "$name", "price": "$price" } } }
+            ]);
+
+            const getProductsByPrice = await Product.aggregate([{ $sort: { price: -1 } }]);
+
+            const joint1 = await Product.find({
+                $and: [{ price: { $gt: 100000 } }, { price: { $lt: 1000000 } }]
+            });
+
+            const join1 = await Product.aggregate([
+                {
+                    $lookup: {
+                        from: "categories",
+                        localField: "category",
+                        foreignField: "_id",
+                        as: "category"
+                    }
+                }
+            ]);
+
+
+
+            res.status(200).json(join1);
+        }
+        catch (err) {
+            res.status(500).json({ message: err.message });
+        }
+
+    }
+
+
 module.exports = {
-    getAllProduct, getSingleProduct, createProduct, updateProduct, deleteProduct
+    getAllProduct, getSingleProduct, createProduct, updateProduct, deleteProduct, getProductsBy
+
 }
