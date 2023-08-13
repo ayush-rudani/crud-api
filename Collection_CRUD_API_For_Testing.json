@@ -1,0 +1,357 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "CRUD API",
+    "dateExported": "2023-08-13T07:03:16.885Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b10b240c-37ff-4f34-9ae3-d696cc4743fa",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Register User",
+            "url": "{{baseUrl}}/api/user/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-05-18T16:32:22.917Z",
+            "modified": "2023-05-18T16:32:22.917Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"ar2\",\r\n    \"email\": \"ar2@gmail.com\",\r\n    \"password\": \"ar1234\"\r\n}"
+            }
+        },
+        {
+            "_id": "0bb9c4c7-4ffd-41ac-8db3-274ff63091dc",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Login",
+            "url": "{{baseUrl}}/api/user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-18T16:32:22.918Z",
+            "modified": "2023-05-18T16:32:22.918Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"email\": \"ar1@gmail.com\",\r\n    \"password\": \"ar1234\"\r\n}"
+            }
+        },
+        {
+            "_id": "faf25333-5258-44d1-8b94-36e6627c7263",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Update User",
+            "url": "{{baseUrl}}/api/user/{id}",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-05-18T16:32:22.919Z",
+            "modified": "2023-05-18T16:32:22.919Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6464675f99f482f206b8a1c1",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"ar22\"\r\n}"
+            }
+        },
+        {
+            "_id": "3f59aedc-bcd8-4ad0-b674-20187233567d",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Delete User",
+            "url": "{{baseUrl}}/api/user/{id}",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-05-18T16:32:22.920Z",
+            "modified": "2023-05-18T16:32:22.920Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6464675f99f482f206b8a1c1",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "d09ee34c-b8b8-473c-9a8a-a88f26346216",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Get All Products",
+            "url": "{{baseUrl}}/api/product/",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-05-18T16:32:22.921Z",
+            "modified": "2023-05-18T16:32:22.921Z",
+            "headers": []
+        },
+        {
+            "_id": "f3c46b21-f57e-4b1a-8c8c-9a99154d180d",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Get Product by Id",
+            "url": "{{baseUrl}}/api/product/{id}",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-05-18T16:32:22.922Z",
+            "modified": "2023-05-18T16:32:22.922Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "646447a781eb35f138a0a230",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "3713f5c0-0571-4d00-a675-bb8126fef0ea",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Add Product",
+            "url": "{{baseUrl}}/api/product/",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-05-18T16:32:22.923Z",
+            "modified": "2023-05-18T16:32:22.923Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"Sony Bravia A80J\",\r\n    \"description\": \"Sony Bravia A80J\",\r\n    \"price\": \"180000\",\r\n    \"category\": \"TVs\"\r\n}"
+            }
+        },
+        {
+            "_id": "76bfea55-a23b-42d7-bd43-84ee5daf7338",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Update Product",
+            "url": "{{baseUrl}}/api/product/{id}",
+            "method": "PATCH",
+            "sortNum": 80000,
+            "created": "2023-05-18T16:32:22.924Z",
+            "modified": "2023-05-18T16:32:22.924Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "64645c49778aa75cc6e8e0e2",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"iphone 13 pro\"\r\n}"
+            }
+        },
+        {
+            "_id": "2bf5bb62-0648-4a5b-8df2-23ec351fdced",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Delete Product",
+            "url": "{{baseUrl}}/api/product/{id}",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2023-05-18T16:32:22.925Z",
+            "modified": "2023-05-18T16:32:22.925Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6464606d2c001e1616630894",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "b3519d2a-a211-43f6-8f5f-f4b84555d535",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Get All Categories",
+            "url": "{{baseUrl}}/api/category/",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2023-05-18T16:32:22.926Z",
+            "modified": "2023-05-18T16:32:22.926Z",
+            "headers": []
+        },
+        {
+            "_id": "c32bfe55-32ef-4185-9964-037635dcf9de",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Add Category",
+            "url": "{{baseUrl}}/api/category/",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2023-05-18T16:32:22.927Z",
+            "modified": "2023-05-18T16:32:22.927Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"TVs\"\r\n}"
+            }
+        },
+        {
+            "_id": "65ab3da2-a39d-4e7b-ba1f-aadd5db932d2",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Update Category",
+            "url": "{{baseUrl}}/api/category/{id}",
+            "method": "PATCH",
+            "sortNum": 120000,
+            "created": "2023-05-18T16:32:22.928Z",
+            "modified": "2023-05-18T16:32:22.928Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6464649655df36d376c48f67",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"name\": \"mobiles2\"\r\n}"
+            }
+        },
+        {
+            "_id": "68e18d7c-22e6-4e8d-b9c4-fd8c6c62d65e",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Delete Category",
+            "url": "{{baseUrl}}/api/category/{id}",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2023-05-18T16:32:22.929Z",
+            "modified": "2023-05-18T16:32:22.929Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "6464649655df36d376c48f67",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "b00bd68d-0fdd-4ff5-82c9-4ec6814570b8",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Create Order",
+            "url": "{{baseUrl}}/api/order",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2023-05-18T16:32:22.930Z",
+            "modified": "2023-05-18T16:32:22.930Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"userid\": \"6463c33d208e513ad4ce0d8b\",\r\n    \"products_id\": [\r\n        \"64645c49778aa75cc6e8e0e2\"\r\n    ]\r\n}"
+            }
+        },
+        {
+            "_id": "671eb5bb-b536-42c2-b664-aac1ffdb99e0",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "Delete Order",
+            "url": "{{baseUrl}}/api/order/{id}",
+            "method": "DELETE",
+            "sortNum": 150000,
+            "created": "2023-05-18T16:32:22.931Z",
+            "modified": "2023-05-18T16:32:22.931Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "64648e606af53c39125542c0",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "fbb49d16-7ab1-44b0-80a1-a4c1860d9acb",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "by category",
+            "url": "{{baseUrl}}/api/product/u/{c}",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-05-18T16:32:22.932Z",
+            "modified": "2023-05-18T16:32:22.932Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "c",
+                    "value": "6463df91f3163bd7562651ff",
+                    "isDisabled": false,
+                    "isPath": true
+                }
+            ]
+        },
+        {
+            "_id": "025693f3-8c42-4b76-a657-04b0daede2a8",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "/u/:c/a1",
+            "url": "{{baseUrl}}/api/product/u/a1",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-05-18T16:32:22.933Z",
+            "modified": "2023-05-18T16:32:22.933Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"query\": {\r\n        \"name\": \"iphone 14\"\r\n    }\r\n}"
+            }
+        },
+        {
+            "_id": "5a7e68d8-482f-4251-8e76-c1c4267bc501",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "/u/:c/a2",
+            "url": "{{baseUrl}}/api/product/u/a2",
+            "method": "GET",
+            "sortNum": 180000,
+            "created": "2023-05-18T16:32:22.934Z",
+            "modified": "2023-05-18T16:32:22.934Z",
+            "headers": []
+        },
+        {
+            "_id": "c194695d-1c41-48af-a21a-b3e858f6d316",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "/u/a3",
+            "url": "{{baseUrl}}/api/product/u/a3",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2023-05-18T16:32:22.935Z",
+            "modified": "2023-05-18T16:32:22.935Z",
+            "headers": []
+        },
+        {
+            "_id": "63a5d835-0f82-4e2b-bb86-9abbdc7ec4c8",
+            "colId": "85309124-3733-45e4-9ada-3e5d93d0166f",
+            "containerId": "",
+            "name": "/u/a4",
+            "url": "{{baseUrl}}/api/product/u/a4/",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2023-05-18T16:32:22.936Z",
+            "modified": "2023-05-18T16:32:22.936Z",
+            "headers": []
+        }
+    ]
+}
